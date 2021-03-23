@@ -62,6 +62,7 @@ table {
 
 * {
     box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 
 
@@ -204,6 +205,13 @@ h2 {
         bottom: 80px;
         margin: 0 2rem;
         border-radius: 10px;
+    }
+
+    @media screen and (orientation: landscape) {
+
+        .action__content {
+            bottom: 55px;
+        }
     }
 
         .action__motto {
