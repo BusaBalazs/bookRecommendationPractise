@@ -1,0 +1,556 @@
+/*------------------------------------*\
+  #CSS-RESET
+\*------------------------------------*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+ 
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+ 
+body {
+    line-height: 1;
+}
+ 
+ol, ul {
+    list-style: none;
+}
+ 
+blockquote, q {
+    quotes: none;
+}
+ 
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+ 
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+
+
+
+/*------------------------------------*\
+  #BOX-SIZING
+\*------------------------------------*/
+
+* {
+    box-sizing: border-box;
+}
+
+
+
+
+
+/*------------------------------------*\
+  #VARIABELS
+\*------------------------------------*/
+
+:root {
+    --basic-color: #f6f3ed;
+    --orange: #ff3c00;
+    --blue-bg: #ced4da;
+    --hover-orange: #ff3c009c;
+    --black: rgb(46, 46, 46);
+    --logo-fontsize: min(4.3vw, 32px);
+    --head-fontsize: min(6vw, 38px);
+    --section-fontsize: min(4vw, 22px);
+}
+
+
+
+
+
+/*------------------------------------*\
+  #BASIC - STYLE
+\*------------------------------------*/
+
+html {
+    width: 100%;
+    position: relative;
+}
+
+body {
+   
+    background-color: var(--basic-color);
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: var(--section-fontsize);
+    line-height: 1.9rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.action,
+.highlight,
+.book,
+.contact {
+    margin-bottom: 1.5rem;
+}
+
+.highlight,
+.book,
+.contact,
+.section {
+   padding: 1rem;
+}
+
+h2 {
+    margin: 2.5rem 0;
+}
+
+
+
+/*------------------------------------*\
+  #HEADER - LAYOUT
+\*------------------------------------*/
+
+.main-header {
+    width: 100%;
+    overflow: hidden;  
+    font-family: 'Libre Baskerville', sans-serif;
+    background-color: var(--blue-bg);
+}
+
+    .main-header__navbar {
+        max-width: 1500px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem;
+    }
+
+        .main-header__item {
+            display: inline-block;
+            margin: 0 .8rem;
+        }
+
+
+
+
+
+/*------------------------------------*\
+  #HEADER - STYLE
+\*------------------------------------*/
+
+        .main-header__logo {
+            font-size: var(--logo-fontsize);
+            font-weight: 700;
+        }
+
+        .main-header__logo--orange {
+            color: var(--orange);
+        }
+
+    .main-header__item a{
+        font-size: min(3vw, 20px);
+        color: var(--orange);
+        border-bottom: 1px solid transparent;
+        transition: all .5s ease-in-out;
+    }
+
+    .main-header__item a:hover {
+        border-bottom: 1px solid var(--orange);
+        color: var(--hover-orange);
+    }
+
+
+
+
+
+/*------------------------------------*\
+  #ACTION SECTION - LAYOUT
+\*------------------------------------*/
+
+.action {
+    background: url(assets/bookshelf_orange.jpg) no-repeat center bottom;
+    background-size: cover;
+    height: 70vh;
+    position: relative;
+}
+
+    .action__content {
+        background-size: cover;
+        position: absolute;
+        padding: 1rem;
+        bottom: 80px;
+        margin: 0 2rem;
+        border-radius: 10px;
+    }
+
+        .action__motto {
+            margin-bottom: 1rem;
+            margin-top: 0;   
+        }
+
+        .action__link {
+            display: inline-block;
+            padding: 1rem 2rem;
+        }
+
+
+
+
+
+/*------------------------------------*\
+  #ACTION-SECTION STYLE
+\*------------------------------------*/
+
+.action {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--orange);
+}
+
+    .action__content {
+        background-color: rgba(255, 255, 255, 0.774);
+    }
+
+        .action__link {
+            background-color: var(--orange);
+            color: var(--basic-color);
+            border-radius: 50px;
+            transition: all .5s ease-in-out;
+        }
+
+            .icon {
+                font-size: 1rem;
+                margin-left: .3rem;
+                transition: all .5s ease-in-out;
+            }
+
+            .action__link:hover {
+                background-color: var(--hover-orange);
+            }
+
+            .action__link:hover .icon {
+                margin-left: .8rem;
+            }
+
+
+
+
+
+/*------------------------------------*\
+  #HIGHLIGHTED BOOKS - LAYOUT
+\*------------------------------------*/
+
+.highlight {
+    text-align: center;
+    margin: 0 auto;
+    width: 95%;
+    position: relative;
+}
+
+    .highlight__arrow {  /*Arrow layout */
+        position: absolute;
+        right: 0%;
+        left: 0%;
+        margin: auto;
+        width: 20px;
+        height: 20px;
+        border-bottom: 4px solid var(--orange);
+        border-radius: 3px;
+        border-left: 4px solid var(--orange);
+        transform: rotate(-45deg);
+        top: 0%;
+        animation: arrow 1s ease-in-out infinite alternate forwards;
+    }
+
+    @keyframes arrow {    /*Arrow animation*/
+        0% {top: 0%;}
+        30% {top: -1%;}
+        70% {top: 1%;}
+        100% {top: 0%;}
+    }
+
+
+    .highlight__container {
+        margin-bottom: 1.5rem;
+        padding: 1rem;
+    }
+
+        .highlight__title {
+            margin-bottom: 2.2rem;
+        }
+
+        .highlight__title:before {
+            content: "";
+            display: block;
+            background-color: var(--orange);
+            height: 10px;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+            box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.397);
+        }
+
+  
+@media (min-width: 768px) {     /* Desktop Size*/
+
+
+    .highlight__wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    .highlight__container {
+        width: 40%;
+        margin: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+        .highlight__more {
+            max-width: 15rem;
+        }
+       
+}
+
+
+
+/*------------------------------------*\
+  #HIGHLIGHTED BOOKS - STYLE
+\*------------------------------------*/
+
+    .highlight__headline {
+        font-size: var(--head-fontsize);
+        color: var(--orange);
+    }
+
+    .highlight__link {
+        color: var(--black);
+    }
+
+        .highlight__container {
+           background-color: white;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.349);
+            transition: all .5s ease-in-out;
+        }
+
+
+        .highlight__title {
+            font-size: var(--head-fontsize);
+        }
+
+        .highlight__headline--black {
+            color: black;
+        }
+
+        .highlight__more {
+            display: inline-block;
+            background-color: var(--orange);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            color: var(--basic-color);
+            font-weight: bold;
+            margin: 2rem 0;
+            transition:  all .5s ease-in-out;
+        }
+
+    .highlight__container:hover {
+        transform: scale(1.02);
+        box-shadow: 2px 2px 18px rgba(0, 0, 0, 0.247);
+    }
+
+        .highlight__more:hover {
+            background-color: var(--hover-orange);
+        }
+
+            .highlight__more:hover .icon {
+                margin-left: .8rem;
+            }
+
+
+
+
+
+/*------------------------------------*\
+  #ALL BOOKS - LAYOUT
+\*------------------------------------*/
+
+.book {
+    background-color: var(--blue-bg);
+}
+
+    .book__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+@media (min-width: 768px) {
+    .book__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+        .book__container {
+            text-align: center;
+            position: relative;
+            justify-self: center;
+            transition: all .5s ease-in-out;
+        }
+
+        .book__container:hover {
+            transform: scale(1.02);
+            box-shadow: 2px 2px 18px rgba(0, 0, 0, 0.521);
+        }
+
+
+           .book__img {
+                width: 100%;
+                transition: all .5s ease-in-out;
+            }
+
+            .book__view {
+                position: absolute;
+                bottom: 30%;
+                background-color: var(--orange);
+                padding: .5rem 2rem;
+                border-radius: 50px;
+                margin-left: 1rem;
+                opacity: 0%;
+                z-index: 1;
+                color: var(--basic-color);
+                font-weight: bold;
+                transition: all .5s ease-in-out;
+            }
+
+            .book__container:hover .book__img {
+                filter: grayscale(80%);
+            }
+
+            .book__container:hover .book__view {
+                opacity: 100%;
+            }
+
+            .book__view:hover {
+                background-color: var(--hover-orange);
+            }
+
+            .book__view:hover .icon {
+                margin-left: .8rem;
+            }
+
+
+            
+
+
+
+
+/*------------------------------------*\
+  #ALL BOOKS - STYLE
+\*------------------------------------*/
+
+    .book__headline {
+        font-size: var(--head-fontsize);
+        text-align: center;
+    }
+
+        .book__headline--orange {
+            color: var(--orange);
+        }
+
+
+
+
+
+/*------------------------------------*\
+  #CONTACT - LAYOUT
+\*------------------------------------*/
+
+.contact {
+    text-align: center;
+    margin-bottom: 8rem;
+}
+
+    .contact__container {
+       
+        font-size: min(15vw, 60px);
+    }
+
+        .contact__logo {
+            display: inline;
+        }
+
+            .contact__logo__icon {
+                margin: 0 3rem;
+                transition: all .5s ease-in-out;
+            }
+
+
+        .contact__logo__icon:hover {
+            transform: scale(1.08);
+            color: var(--orange);
+            filter: grayscale(0%);
+        }
+
+
+
+
+
+/*------------------------------------*\
+  #CONTACT - STYLE
+\*------------------------------------*/
+
+    .contact__title {
+        font-size: var(--head-fontsize);
+    }
+
+        .contact__title--orange {
+            color: var(--orange);
+        }
+
+        .contact__logo__icon {
+            color: var(--black);
+        }
+
+
+
+
+
+/*------------------------------------*\
+  #FOOTER - LAYOUT
+\*------------------------------------*/
+
+.footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0%;
+    background-color: var(--orange);
+    font-size: var(--section-fontsize);
+    color: var(--basic-color);
+    text-align: center;
+    padding: 1rem;
+}
+
